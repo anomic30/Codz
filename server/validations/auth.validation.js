@@ -1,0 +1,1 @@
+// To validate the request body of the login and register routes
