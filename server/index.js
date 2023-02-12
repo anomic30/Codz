@@ -6,7 +6,7 @@ const compression = require("compression");
 require("dotenv").config();
 const { connectToDatabase } = require("./db");
 const rateLimiter = require("./middlewares/rateLimiter");
-const ai = require("./routes/ai");
+const routes = require("./routes");
 
 const app = express();
 const port = process.env.PORT || 8082;
@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
 // Define routes below
-app.use("/api", ai);
+app.use("/api", routes);
 
 // connectToDatabase().then(() => {
 //     app.listen(port, () => {
