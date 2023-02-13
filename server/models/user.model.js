@@ -66,7 +66,26 @@ const userSchema = new Schema({
                 required: true,
             }
         }
-    ]
+    ],
+    plan: {
+        planName: {
+            type: String,
+            enum: ["Basic", "Pro"],
+            required: true
+        },
+        price: {
+            type: Number,
+            required: true
+        },
+        startDate: {
+            type: Date,
+            required: true
+        },
+        endDate: {
+            type: Date,
+            required: true
+        }
+    }
 });
 
 const userModel = mongoose.model('users', userSchema);
