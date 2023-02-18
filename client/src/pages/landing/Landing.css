@@ -1,0 +1,59 @@
+.Landing {
+  background-color: var(--landing-bg);
+  width: 100%;
+  padding: 0px 10px;
+  box-sizing: border-box;
+}
+.Landing .navbar {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Landing .navbar-content {
+  max-width: 1200px;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+.Landing .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.Landing .nav-btn {
+  padding: 8px 20px;
+  background: linear-gradient(123.28deg, #306BFF 4.69%, #040E3A 289.88%);
+  color: white;
+  border-radius: 5px;
+  box-shadow: 3px 2px 12px rgba(66, 164, 255, 0.452);
+}
+.Landing .hero {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Landing .hero .hero-content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px 0px;
+  display: flex;
+  gap: 70px;
+  align-items: center;
+}
+.Landing .hero .hero-content .title h1 {
+  color: var(--text-primary);
+  font-size: 128px;
+  font-weight: 700;
+  line-height: 100%;
+}
+.Landing .hero .hero-content .title {
+  width: 564px;
+}
+.Landing .hero .hero-content .sub-title {
+  color: var(--text-secondary);
+  font-weight: 400;
+  font-size: 20px;
+}/*# sourceMappingURL=Landing.css.map */
