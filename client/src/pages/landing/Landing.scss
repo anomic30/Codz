@@ -4,6 +4,7 @@
   padding: 0px 10px;
   box-sizing: border-box;
 
+
   #gradient {
     background: var(--btn-primary);
     -webkit-background-clip: text;
@@ -20,7 +21,8 @@
   .navbar-content {
     max-width: 1200px;
     width: 100%;
-    color: white;
+    color: 00px 0;
+    color: var(--text-primary);
     display: flex;
     justify-content: space-between;
   }
@@ -34,7 +36,8 @@
   .nav-btn {
     padding: 8px 20px;
     background: linear-gradient(123.28deg, #306BFF 4.69%, #040E3A 289.88%);
-    color: white;
+    color: 00px 0;
+    color: var(--text-primary);
     border-radius: 5px;
     box-shadow: 3px 2px 12px rgba(0, 132, 255, 0.351);
 
@@ -92,17 +95,19 @@
       display: inline-block;
       margin-top: -280px;
       margin-bottom: -280px;
+      transform: rotate(180deg);
     }
 
   }
 
   .intro {
     width: 100%;
-    padding: 200px 0px;
+    padding: 150px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: 00px 0;
+    color: var(--text-primary);
 
     .intro-content {
       max-width: 1200px;
@@ -124,7 +129,7 @@
 
       .intro-sub-title {
         font-weight: 400;
-        font-size: 22px;
+        font-size: 20px;
         line-height: 28px;
         color: var(--text-secondary);
       }
@@ -137,6 +142,189 @@
     .intro-graphic img {
       display: inline-block;
       width: 100%;
+    }
+  }
+
+  .playground {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    color: var(--text-primary);
+
+    .playground-content {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      background-color: var(--landing-card);
+      border-radius: 10px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px 0px;
+      background-image: url("../../assets/images/dotted_grid.svg");
+      background-repeat: no-repeat;
+      // position: relative;
+
+
+      .playground-graphic {
+        box-sizing: border-box;
+        width: 60%;
+        position: relative;
+
+        img:nth-child(1) {
+          width: 120%;
+          margin-left: -200px;
+          box-shadow: -21px 14px 15px 2px rgba(0, 0, 0, 0.25);
+        }
+
+        img:nth-child(2) {
+          height: 400px;
+          position: absolute;
+          width: 100%;
+          margin-top: 10%;
+          margin-left: -60%;
+          filter: drop-shadow(-17px 21px 21px rgba(0, 0, 0, 0.4));
+        }
+
+      }
+
+      .playground-desc {
+        box-sizing: border-box;
+        width: 40%;
+        padding: 40px;
+
+        .playground-title {
+          font-weight: 600;
+          font-size: 50px;
+        }
+
+        .playground-sub-title {
+          font-weight: 400;
+          font-size: 18px;
+          color: var(--text-secondary);
+        }
+      }
+
+      // img {
+      //   width: 900px;
+      //   position: absolute;
+      //   top: 69;
+      //   z-index: 1;
+      // }
+    }
+  }
+
+  .features {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0px;
+    color: var(--text-primary);
+
+    .feature-content {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .feature-title {
+        font-size: 50px;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .feature-sub-title {
+        font-size: 20px;
+        max-width: 800px;
+        width: 100%;
+        font-weight: 400;
+        text-align: center;
+        color: var(--text-secondary);
+      }
+
+      .card-con {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding-top: 40px;
+        gap: 10px;
+
+        .card {
+          width: 250px;
+          padding: 20px;
+          background-color: var(--landing-card);
+          border-radius: 10px;
+
+          .card-title {
+            font-size: 22px;
+            font-weight: 600;
+            padding-top: 10px;
+          }
+
+          .card-sub-title {
+            font-size: 18px;
+            font-weight: 400;
+            padding-top: 10px;
+            color: var(--text-secondary);
+          }
+
+          &:hover {
+            background-color: #191a24;
+            transition: 0.5s;
+          }
+        }
+      }
+    }
+  }
+
+  .join {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:300px 0px;
+    color: var(--text-primary);
+    background-image: url("../../assets/images/dotted-circle.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    
+
+    .join-content{
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .join-title{
+        font-size: 50px;
+        font-weight: 600;
+        text-align: center;
+        max-width: 600px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .join-btn{
+        font-size: 18px;
+        text-align: center;
+        width: 150px;
+        height: 30px;
+        padding: 10px 30px;
+        background: linear-gradient(123.28deg, #306BFF 4.69%, #040E3A 289.88%);
+        color: 00px 0;
+        color: var(--text-primary);
+        border-radius: 5px;
+        box-shadow: 3px 2px 12px rgba(0, 132, 255, 0.351);
+      }
+      
     }
   }
 }
