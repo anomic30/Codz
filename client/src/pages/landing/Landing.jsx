@@ -21,7 +21,7 @@ const Landing = () => {
   const navigate = useNavigate()
   return (
     <div className="Landing">
-
+    
       <nav className="navbar">
         <div className="navbar-content">
           <img src={fullLogo} alt="logo" />
