@@ -22,12 +22,12 @@ app.use(morgan("dev"));
 // Define routes below
 app.use("/api", routes);
 
-// connectToDatabase().then(() => {
-//     app.listen(port, () => {
-//         console.log(`Server listening on port ${port}`);
-//     });
-// });
-
-app.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
+connectToDatabase().then(() => {
+    app.listen(port, () => {
+        console.log(`Server listening on port ${port}`);
+    });
 });
+
+// app.listen(port, () => {
+//     console.log(`Server listening on port ${port}`);
+// });
