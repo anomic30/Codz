@@ -35,6 +35,7 @@
   --text-secondary: #BFBFBF;
   --app-bg: #131517;
   --app-primary: #1E1F25;
+  --app-button:#2F3033;
 }
 
 body {
@@ -63,4 +64,5 @@ a {
   &:active {
     transform: scale(0.98);
   }
+  
 }

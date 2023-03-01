@@ -9,6 +9,8 @@ import Dashboard from '../pages/dashboard/Dashboard';
 import Main from '../pages/main/Main';
 import Playground from '../pages/playground/Playground';
 import Pricing from '../pages/pricing/Pricing';
+import Codes from '../pages/codes/Codes';
+
 
 function AnimatedRoutes() {
     const location = useLocation();
@@ -23,6 +25,7 @@ function AnimatedRoutes() {
                     <Route path="/app" element={<Dashboard />} />
                     <Route path="/app/playground" element={<Playground />} />
                     <Route path="/app/pricing" element={<PricingBox/>} />
+                    <Route path="/app/codes" element={<Codes/>} />
                 </Route>
             </Routes>
         </AnimatePresence>
