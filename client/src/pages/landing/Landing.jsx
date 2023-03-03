@@ -56,10 +56,10 @@ const Landing = () => {
         </div>
       </section>
 
-      <section className="hero-graphics">
+      {/* <section className="hero-graphics">
         <div className="nextimg"></div>
         <div className="codingimg"></div>
-      </section>
+      </section> */}
 
       <section className="intro">
         <div className="intro-content">
