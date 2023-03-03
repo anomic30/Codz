@@ -66,7 +66,7 @@ const Login = () => {
           if (loginResp.status === 200) {
             dispatch(metaData(loginResp.data.metaData));
             dispatch(setUser(loginResp.data.user));
-            console.log(loginResp.data);
+            console.log( loginResp.data);
             Cookies.set('token', didToken);
             navigate("/app");
           }
