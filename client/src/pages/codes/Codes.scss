@@ -1,60 +1,57 @@
-.Codes{
+.Codes {
   background-color: var(--app-bg);
   width: 100%;
-  .welcome-box{
+
+  .welcome-box {
     padding: 10px 0px;
 
-        h1{
-            color: white;
-            font-weight: 600;
-        }      
-  } 
-
-  .search-con{
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    gap:10px;
-
-  .search-inp{
-    display: flex;
-    align-items: center;
-    margin-right: 5px;
-    flex: 1;
-    
-    background: rgba(122, 123, 125, 0.21);
-    outline: none;
-    border: none;
-    border-radius: 6px;
-    padding: 0 10px;
-
-    input{
-    background: none;
-    border: none;
-    outline: none;
-    padding:8px 0;
-    color:white;
-    flex: 1;
-    margin-left: 10px;
-    font-size:18px;
+    h1 {
+      color: white;
+      font-weight: 600;
     }
   }
-  .func-btn{
+
+  .search-con {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content:center;
-    color:white;
-    background-color:var(--app-primary);
-    padding:0 20px;
+    gap: 10px;
+
+    .search-inp {
+      display: flex;
+      align-items: center;
+      margin-right: 5px;
+      flex: 1;
+
+      background: #25262b;
+      outline: none;
+      border: none;
+      border-radius: 6px;
+      padding: 0 10px;
+
+
+
+      input {
+        font-family: 'Lexend', sans-serif;
+        background: none;
+        border: none;
+        outline: none;
+        padding: 8px 0;
+        color: white;
+        flex: 1;
+        margin-left: 10px;
+        font-size: 16px;
+      }
+    }
+
+    .func-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      background-color: var(--app-primary);
+      padding: 0 20px;
+    }
   }
-}
-.mantine-3hqtfx{
-  background-color:var(--app-button);
-  color:white;
-  border:none;
-}
-.mantine-rynikm{
-  background-color:var(--app-button);
-  color:white;
-}
+
 }

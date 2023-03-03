@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Codes.scss"
-import { Select, Skeleton, Container } from '@mantine/core';
+import { Select, Skeleton, Container, SimpleGrid, Flex } from '@mantine/core';
+import CodeCard from '../../components/codeCard/codeCard'
 import search_icon from '../../assets/icons/search.svg'
 import sort_icon from '../../assets/icons/sort.svg'
 import filter_icon from '../../assets/icons/filter.svg'
@@ -23,16 +24,45 @@ const Codes = () => {
             />
           </div>
           <Select
-      placeholder="Sort by"
-      data={['React', 'Angular', 'Svelte', 'Vue']}
-      icon={<img src={sort_icon} alt="search"/> }
-      // color={colorScheme ='dark'}
-    />
-          {/* <div className="func-btn">
-            <img src={sort_icon} alt="search" />
-            <p>Sort</p>
-          </div> */}
+            transition="scale-y"
+            transitionDuration={180}
+            transitionTimingFunction="ease"
+            placeholder="Sort by"
+            data={['Newest First', 'Oldest First']}
+            icon={<img src={sort_icon} alt="search" />}
+            styles={(theme) => ({
+              item: {
+                '&[data-selected]': {
+                  '&, &:hover': {
+                    backgroundColor: '#306BFF',
+                    color: theme.colorScheme === 'dark' ? theme.white : theme.colors.teal[9],
+                  },
+                },
+              },
+            })}
+          />
         </div>
+        <br />
+        <br />
+        {/* <SimpleGrid cols={4}>
+          <CodeCard />
+          <CodeCard />
+          <CodeCard />
+          <CodeCard />
+        </SimpleGrid> */}
+        <Flex
+          gap={30}
+          justify="space-between"
+          align="center"
+          direction="row"
+          wrap="wrap"
+        >
+          <CodeCard />
+          <CodeCard />
+          <CodeCard />
+          <CodeCard />
+          <CodeCard />
+        </Flex>
       </Container>
     </div>
   )
