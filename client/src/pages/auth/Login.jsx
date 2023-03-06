@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Auth.scss'
 import fullLogo from '../../assets/icons/codz-full-logo.svg'
@@ -28,6 +28,13 @@ const Login = () => {
 
   const dispatch = useDispatch();
   // const emailId = useSelector((state)=>state.auth.value.email)
+  const userMetadata = useSelector((state) => state.auth.value); 
+
+  useEffect(() => {
+    if (userMetadata.issuer) {
+      navigate("/app");
+    }
+  },[])
 
   const handleLogin = async () => {
     setLoading(true);

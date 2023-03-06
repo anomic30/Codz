@@ -34,7 +34,7 @@ const userSlice = createSlice({
                 state.value.codes[codeIndex].code = code;
                 state.value.codes[codeIndex].language = language;
                 state.value.codes[codeIndex].file_name = file_name;
-                state.value.codes[codeIndex].last_edited = new Date();
+                state.value.codes[codeIndex].last_edited = new Date().toISOString();
             }
         },
         deleteCode: (state, action) => {

@@ -12,12 +12,12 @@ const Pricing = () => {
   return (
     <div className='Pricing'>
 
-       <nav className="navbar">
+      <nav className="navbar">
         <div className="navbar-content">
-          <img onClick={()=>navigate("/")} src={fullLogo} alt="logo"/>
+          <img onClick={() => navigate("/")} src={fullLogo} alt="logo" />
           <div className="nav-links">
-            <div onClick={()=>navigate("/pricing")}>Pricing</div>
-            <a onClick={()=>navigate("/register")}><div className="nav-btn">Use Now</div></a>
+            <div onClick={() => navigate("/pricing")}>Pricing</div>
+            <a onClick={() => navigate("/register")}><div className="nav-btn">Use Now</div></a>
           </div>
         </div>
       </nav>
@@ -25,8 +25,8 @@ const Pricing = () => {
       <img src={loginCard} className="login-center" alt="gradient" />
       <img src={loginRight} className="login-right" alt="gradient" />
       <div className='pricing-box-wrapper'>
-        
-      <PricingBox/>
+
+        <PricingBox />
       </div>
     </div>
   )

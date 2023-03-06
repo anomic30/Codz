@@ -40,12 +40,15 @@ const Landing = () => {
       <img className='hero-mid' src={landingHero} alt="" />
 
       <section className="hero">
-
+        <img src={coding} alt="coding" className='coding-img'/>
+        <img src={next_gen} alt="nextgen" className='nextgen-img'/>
         <div className="hero-content">
           <div className="title">
             <h1>
               THE
-              FUTURE OF
+            </h1>
+            <h1>
+              <span>FUTURE </span>
             </h1>
           </div>
           <div className="sub-title">
@@ -54,6 +57,7 @@ const Landing = () => {
             </p>
           </div>
         </div>
+        <div className="codingimg"></div>
       </section>
 
       {/* <section className="hero-graphics">
@@ -105,7 +109,7 @@ const Landing = () => {
             Codz's advanced AI technology is the backbone of our platform, providing cutting-edge features and functionality to help you write better code in less time
           </p>
           <div className="card-con">
-            <div className='card'>
+            <div className='feature-card'>
               <img src={optimization} alt="optimization" />
               <br />
               <p className='card-title'>
@@ -115,7 +119,7 @@ const Landing = () => {
                 Get more out of your code with Codz's intelligent optimization algorithms, designed to boost performance and reduce bloat.
               </p>
             </div>
-            <div className='card'>
+            <div className='feature-card'>
               <img src={generation} alt="generation" />
               <p className='card-title'>
                 Code Generation
@@ -124,7 +128,7 @@ const Landing = () => {
                 From simple functions to complex algorithms, Codz's code generation feature makes it easy to generate high-quality code quickly and easily.
               </p>
             </div>
-            <div className='card'>
+            <div className='feature-card'>
               <img src={debugging} alt="debugging" />
               <p className='card-title'>
                 Code Debugging
@@ -133,7 +137,7 @@ const Landing = () => {
                 Don't let bugs slow you down - with Codz's code debugging feature, you can quickly identify and solve issues in your code.
               </p>
             </div>
-            <div className='card'>
+            <div className='feature-card'>
               <img src={summarization} alt="summarization" />
               <p className='card-title'>
                 Code Summarization

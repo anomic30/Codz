@@ -14,9 +14,8 @@ router.post("/prompt", async (req, res) => {
     }
 });
 
-router.post("/optimize", async (req, res) => {
+router.post("/optimize", authMiddleware, async (req, res) => {
     const magicId = req.magicId;
-    console.log(magicId);
     try {
         const user = await User.findOne({ magic_id: magicId });
         if (!user) {

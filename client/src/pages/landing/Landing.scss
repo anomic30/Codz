@@ -14,7 +14,7 @@
 
   .hero-left{
     position:absolute;
-    opacity:80%;
+    opacity:100%;
     top:-450px;
     left:-350px;
     transform: rotate(45deg);
@@ -75,10 +75,23 @@
 
   .hero {
     width: 100%;
+    height: 80vh;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     position: relative;
+    
+    img{
+      position: absolute;
+    }
+
+    .coding-img{
+      top:500px;
+    }
+    .nextgen-img{
+      bottom:400px ;
+    }
 
     .hero-content {
       max-width: 1200px;
@@ -97,6 +110,13 @@
 
       .title {
         width: 564px;
+      }
+
+      span{
+        background: linear-gradient(114.68deg, #306BFF 24.4%, #061451 82.41%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
       }
 
       .sub-title {
@@ -118,7 +138,7 @@
   background: url("../../assets/images/coding.svg") repeat-x;
   height: 400px;
   width: 76800px;
-  animation: slide 500s linear infinite;
+  // animation: slide 500s linear infinite;
 
   &:hover{
     background:url("../../assets/images/coding2.svg") repeat-x;
@@ -129,7 +149,7 @@
   background: url("../../assets/images/next-gen.svg") repeat-x;
   height: 272px;
   width: 76800px;
-  animation: slide 500s linear infinite;
+  // animation: slide 500s linear infinite;
 
   &:hover{
     background:url("../../assets/images/next-gen2.svg") repeat-x;
@@ -331,12 +351,12 @@
         padding-top: 40px;
         gap: 10px;
 
-        .card {
-          width: 250px;
+        .feature-card {
+          min-height: 350px;
+          width: 280px;
           padding: 20px;
           background-color: var(--landing-card);
           border-radius: 10px;
-          min-height: 250px;
 
 
           .card-title {
@@ -409,7 +429,6 @@
         font-size: 18px;
         text-align: center;
         width: 150px;
-        height: 30px;
         padding: 10px 30px;
         background: linear-gradient(123.28deg, #306BFF 4.69%, #040E3A 289.88%);
         color: 00px 0;

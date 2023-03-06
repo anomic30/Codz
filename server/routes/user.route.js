@@ -27,23 +27,44 @@ router.get("/data", authMiddleware, async (req, res) => {
 })
 
 router.post('/createFile', authMiddleware, async (req, res) => {
-    const magic_id = req.magic_id;
+    const magicId = req.magicId;
     try {
-        const { code_id, code, file_name, last_edited, created_at } = req.body;
-        const user = await User.findOne({ magic_id });
+        const { code_id, code, language, file_name, last_edited, created_at } = req.body;
+        const user = await User.findOne({ magic_id: magicId });
         if (!user) {
             return res.status(404).json({ error: 'User not found' });
         }
         const newCode = {
             code_id,
             code,
+            language,
             file_name,
             last_edited,
             created_at
         };
         user.codes.push(newCode);
         await user.save();
-        return res.status(200).json({ message: 'Code added successfully' });
+        return res.status(200).json({ message: 'File created successfully!' });
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+});
+
+router.delete('/deleteFile/:code_id', authMiddleware, async (req, res) => {
+    const magicId = req.magicId;
+    try {
+        const { code_id } = req.params;
+        const user = await User.findOne({ magic_id: magicId });
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+        const codeToDelete = user.codes.find(code => code.code_id === code_id);
+        if (!codeToDelete) {
+            return res.status(404).json({ error: 'Code not found' });
+        }
+        user.codes = user.codes.filter(code => code.code_id !== code_id);
+        await user.save();
+        return res.status(200).json({ message: 'Code deleted successfully' });
     } catch (error) {
         return res.status(500).json({ error: error.message });
     }

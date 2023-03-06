@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Auth.scss'
 import fullLogo from '../../assets/icons/codz-full-logo.svg'
@@ -11,6 +11,7 @@ import loginCard from '../../assets/gradients/login-card.png'
 import loginLeft from '../../assets/gradients/login-left.png'
 import loginRight from '../../assets/gradients/login-right.png'
 import Axios from 'axios'
+import { useSelector } from 'react-redux';
 
 const APP_SERVER = import.meta.env.VITE_APP_SERVER;
 
@@ -19,7 +20,15 @@ const Register = () => {
   const [name, setName] = useState("");
   const [profession, setProfession] = useState("");
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
+  const userMetadata = useSelector((state) => state.auth.value); 
+
+  useEffect(() => {
+    if (userMetadata.issuer) {
+      navigate("/app");
+    }
+  },[])
 
   const handleRegistration = async () => {
     setLoading(true);

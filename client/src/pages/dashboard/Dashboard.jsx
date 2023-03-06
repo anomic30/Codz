@@ -70,26 +70,25 @@ const Dashboard = () => {
           <Grid.Col xs={12}>
             <div className='details-card' >
               <div className="details-con">
-              <p className="title">Generations</p>
-              <p className="value">{userData?.total_code_generations}</p>
+                <p className="title">Generations</p>
+                <p className="value">{userData?.total_code_generations}</p>
               </div>
               <div className="details-con">
-              <p className="title">Debuggings</p>
-              <p className="value">{userData?.total_code_debuggings}</p>
+                <p className="title">Debuggings</p>
+                <p className="value">{userData?.total_code_debuggings}</p>
               </div>
               <div className="details-con">
-              <p className="title">Optimizations</p>
-              <p className="value">{userData?.total_code_optimizations}</p>
+                <p className="title">Optimizations</p>
+                <p className="value">{userData?.total_code_optimizations}</p>
               </div>
               <div className="details-con">
-              <p className="title">Summarizations</p>
-              <p className="value">{userData?.total_code_summarizations}</p>
+                <p className="title">Summarizations</p>
+                <p className="value">{userData?.total_code_summarizations}</p>
               </div>
-              <div className="details-con">
-              <p className="title">Translations</p>
-              <p className="value">{userData?.total_code_translations}</p>
-              </div>
-              
+              {/* <div className="details-con">
+                <p className="title">Translations</p>
+                <p className="value">{userData?.total_code_translations}</p>
+              </div> */}
             </div>
           </Grid.Col>
         </Grid>

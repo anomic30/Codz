@@ -17,7 +17,7 @@ const didToken = Cookies.get('token');
 
 const ActionBar = () => {
     const code = useSelector(state => state.code.value);
-    const creditsLeft = useSelector(state => state.user.value.credits.value) - 1;
+    const creditsLeft = useSelector(state => state.user?.value?.credits?.value) - 1;
     const dispatch = useDispatch();
 
     const execute = async (operation) => {
