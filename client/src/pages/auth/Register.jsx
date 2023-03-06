@@ -12,7 +12,6 @@ import loginLeft from '../../assets/gradients/login-left.png'
 import loginRight from '../../assets/gradients/login-right.png'
 import Axios from 'axios'
 import { useSelector } from 'react-redux';
-
 const APP_SERVER = import.meta.env.VITE_APP_SERVER;
 
 const Register = () => {

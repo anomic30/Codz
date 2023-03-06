@@ -8,11 +8,14 @@ import Cookies from 'js-cookie'
 import { deleteCode } from '../../slices/userSlice';
 import { useDispatch } from 'react-redux';
 import { DateTime } from 'luxon';
+import { editorLanguage, userCode } from '../../slices/codeSlice';
+import { useNavigate } from 'react-router-dom';
 
 const APP_SERVER = import.meta.env.VITE_APP_SERVER;
 
 const codeCard = ({ code }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleFileDelete = async(code_id) => {
     try {
@@ -27,9 +30,19 @@ const codeCard = ({ code }) => {
     }
   }
 
+  const handleCardClick = async()=>{
+    try {
+      dispatch(editorLanguage(code?.language));
+      dispatch(userCode(code?.code));
+      navigate("/app/playground");
+    } catch (error) {
+      toast.error("Smth went wrong!");      
+    }
+  }
+
   return (
     <div>
-      <Card shadow="sm" radius="md" >
+      <Card shadow="sm" radius="md" onClick={handleCardClick}>
         <Card.Section inheritPadding py="xs">
           <Group position="apart">
             <Text weight={500}></Text>
@@ -47,7 +60,7 @@ const codeCard = ({ code }) => {
             </Menu>
           </Group>
         </Card.Section>
-
+        
         <Card.Section mt="sm" maw={260}>
           <Image src={`https://img.icons8.com/ios/64/306BFF/${code?.language}.png`} />
         </Card.Section>

@@ -61,7 +61,7 @@ const Codes = () => {
           direction="row"
           wrap="wrap"
         >
-          {userData.codes.length > 0? userData.codes.map((code) => {
+          {userData?.codes?.length > 0? userData.codes.map((code) => {
             return <CodeCard code={code} />
           }): <p>You haven't saved any file yet!</p>}
         </Flex>

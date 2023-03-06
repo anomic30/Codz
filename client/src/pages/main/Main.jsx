@@ -27,10 +27,10 @@ const Main = () => {
     //     }
     // }
 
-    const userMetadata = useSelector((state) => state.auth.value); 
+    const userMetadata = useSelector((state) => state.auth?.value); 
 
     useEffect(() => {
-      if (!userMetadata.issuer) {
+      if (!userMetadata?.issuer) {
         navigate("/login");
       }
     },[navigate])

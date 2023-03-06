@@ -4,10 +4,12 @@ import "./Dashboard.scss"
 import { Grid, Skeleton, Container } from '@mantine/core';
 import codz_avatar from '../../assets/images/codz-avatar.png'
 import code_group from '../../assets/images/code-group.png'
+import { useNavigate } from 'react-router-dom';
 
 const child = <Skeleton height={200} radius="md" animate={true} />;
 
 const Dashboard = () => {
+  const navigate = useNavigate();
 
   const userData = useSelector(state => state.user.value);
 
@@ -47,7 +49,7 @@ const Dashboard = () => {
               {userData?.plan?.plan_name === "Basic" ?
                 <p id='basic' className='plan'>Basic</p> : <p id='pro' className='plan'>Pro</p>
               }
-              <div className="dashboard-btn">
+              <div className="dashboard-btn" onClick={()=>navigate("/app/pricing")}>
                 Upgrade
               </div>
             </div>
@@ -59,7 +61,7 @@ const Dashboard = () => {
                 <p className="title">your amazing</p>
                 <p className="title">codes</p>
                 <br />
-                <div className="dashboard-btn">My Codes</div>
+                <div className="dashboard-btn" onClick={()=>navigate("/app/codes")}>My Codes</div>
               </div>
               <div className="right">
                 <img src={code_group} alt="code-group" />
