@@ -34,7 +34,7 @@ const Login = () => {
     if (userMetadata.issuer) {
       navigate("/app");
     }
-  },[])
+  },[userMetadata.issuer])
 
   const handleLogin = async () => {
     setLoading(true);

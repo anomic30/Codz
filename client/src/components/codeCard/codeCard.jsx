@@ -1,6 +1,6 @@
 import React from 'react'
 import "./codeCard.scss"
-import { Card, Group, Text, Menu, ActionIcon, Image } from '@mantine/core';
+import { Card, Group, Text, Menu, ActionIcon, Image, Center } from '@mantine/core';
 import kebab from '../../assets/icons/kebab.svg'
 import Axios from 'axios';
 import toast from 'react-hot-toast';
@@ -17,7 +17,7 @@ const codeCard = ({ code }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleFileDelete = async(code_id) => {
+  const handleFileDelete = async (code_id) => {
     try {
       const resp = await Axios.delete(APP_SERVER + "/api/user/deleteFile/" + code_id, {
         headers: { Authorization: "Bearer " + Cookies.get('token') }
@@ -30,20 +30,20 @@ const codeCard = ({ code }) => {
     }
   }
 
-  const handleCardClick = async()=>{
+  const handleCardClick = async () => {
     try {
       dispatch(editorLanguage(code?.language));
       dispatch(userCode(code?.code));
       navigate("/app/playground");
     } catch (error) {
-      toast.error("Smth went wrong!");      
+      toast.error("Smth went wrong!");
     }
   }
 
   return (
     <div>
-      <Card shadow="sm" radius="md" onClick={handleCardClick}>
-        <Card.Section inheritPadding py="xs">
+      <Card shadow="sm" radius="md">
+        <Card.Section inheritPadding py="xs" miw={250}>
           <Group position="apart">
             <Text weight={500}></Text>
             <Menu withinPortal position="bottom-end" shadow="sm">
@@ -53,26 +53,29 @@ const codeCard = ({ code }) => {
                 </ActionIcon>
               </Menu.Target>
               <Menu.Dropdown>
-                <Menu.Item color="red" onClick={()=>handleFileDelete(code?.code_id)}>
+                <Menu.Item color="red" onClick={() => handleFileDelete(code?.code_id)}>
                   Delete
                 </Menu.Item>
               </Menu.Dropdown>
             </Menu>
           </Group>
         </Card.Section>
-        
-        <Card.Section mt="sm" maw={260}>
-          <Image src={`https://img.icons8.com/ios/64/306BFF/${code?.language}.png`} />
-        </Card.Section>
 
-        <Text mt="sm" color="#306BFF" size="m">
-          { code?.file_name }
-        </Text>
+        <div onClick={handleCardClick} className='card-below'>
 
-        <Card.Section inheritPadding mt="sm" pb="md">
-          <Text fz="xs" weight={500}>Edited at: { DateTime.fromISO(code?.last_edited).toLocaleString(DateTime.DATETIME_MED) }</Text>
-          <Text fz="xs" weight={500}>Created at: { DateTime.fromISO(code?.created_at).toLocaleString(DateTime.DATETIME_MED) }</Text>
-        </Card.Section>
+          <Center mt="sm">
+            <Image src={`https://img.icons8.com/ios/64/306BFF/${code?.language}.png`} width={200} height={80} fit="contain" withPlaceholder />
+          </Center>
+
+          <Text mt="sm" color="#306BFF" size="m">
+            {code?.file_name}
+          </Text>
+
+          <Card.Section inheritPadding mt="sm" pb="md">
+            <Text fz="xs" weight={500}>Edited at: {DateTime.fromISO(code?.last_edited).toLocaleString(DateTime.DATE_MED)}</Text>
+            <Text fz="xs" weight={500}>Created at: {DateTime.fromISO(code?.created_at).toLocaleString(DateTime.DATE_MED)}</Text>
+          </Card.Section>
+        </div>
       </Card>
     </div>
   )
