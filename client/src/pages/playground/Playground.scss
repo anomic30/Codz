@@ -14,5 +14,10 @@
         padding: 20px;
     }
 
+    #right-side{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
 

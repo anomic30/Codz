@@ -71,10 +71,10 @@ router.delete('/deleteFile/:code_id', authMiddleware, async (req, res) => {
 });
 
 router.patch('/patchCode', authMiddleware, async (req, res) => {
-    const magic_id = req.magic_id;
+    const magicId = req.magicId;
     try {
         const { code_id, code, language, file_name, last_edited } = req.body;
-        const user = await User.findOne({ magic_id });
+        const user = await User.findOne({ magic_id: magicId });
         if (!user) {
             return res.status(404).json({ error: 'User not found' });
         }

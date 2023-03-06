@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { gpt } = require("../services/gpt.service");
+const { gpt, chatGpt } = require("../services/gpt.service");
 const User = require("../models/user.model");
 const authMiddleware = require('../middlewares/authMiddleware');
 
@@ -135,6 +135,27 @@ router.post("/summarize", authMiddleware, async (req, res) => {
     }catch(error){
         console.log(error);
         res.status(500).json({error});
+    }
+})
+
+router.post('/chat', authMiddleware, async (req, res) => {
+    const magicId = req.magicId;
+    try {
+        const { chats } = req.body;
+        const user = await User.findOne({ magic_id: magicId });
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+
+        const resp = await chatGpt(chats);
+
+        //deduct 2 credit from user
+        user.credits.value -= 2;
+        await user.save();
+
+        return res.status(200).json({reply: resp});
+    } catch (error) {
+        
     }
 })
 
