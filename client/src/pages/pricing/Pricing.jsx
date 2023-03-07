@@ -26,10 +26,10 @@ const Pricing = () => {
       <img src={loginLeft} className="login-left" alt="gradient" />
       <img src={loginCard} className="login-center" alt="gradient" />
       <img src={loginRight} className="login-right" alt="gradient" />
-      <Container size={1200}></Container>
+      <Container size={1200} className='pricing-con'>
         <PricingBox />
       <Footer/>
-      <Container size={1200}></Container>
+      </Container>
     </div>
   )
 }
