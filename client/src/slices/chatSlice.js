@@ -1,3 +1,5 @@
+import { createSlice } from '@reduxjs/toolkit';
+
 const chatSlice = createSlice({
     name: 'chat',
     initialState: {
@@ -18,6 +20,6 @@ const chatSlice = createSlice({
     }
 });
 
-export const { addMessage, getLastFiveMessages } = authSlice.actions;
+export const { addMessage, getLastFiveMessages } = chatSlice.actions;
 
 export default chatSlice;
