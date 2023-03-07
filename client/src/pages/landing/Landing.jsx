@@ -2,10 +2,6 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Landing.scss'
 import fullLogo from '../../assets/icons/codz-full-logo.svg'
-import dmatter from '../../assets/images/darkmater.gif'
-import coding from '../../assets/images/coding.svg'
-import next_gen from '../../assets/images/next-gen.svg'
-import openai from '../../assets/images/openai.png'
 import playground from '../../assets/images/codz-playground.svg'
 import playground_chat from '../../assets/images/codz-chat.svg'
 import dotted_grid from '../../assets/images/dotted_grid.svg'
@@ -17,7 +13,10 @@ import codz_hero from '../../assets/images/codz-hero.png'
 import dotted_circle from '../../assets/images/dotted-circle.svg'
 import codz_grid from '../../assets/images/codz-grid.svg'
 import landingHero from '../../assets/gradients/landing-hero.png'
+import land_grad from '../../assets/gradients/land-grad.png'
 import landingIntro from '../../assets/gradients/landing-intro.png'
+import glass_board from '../../assets/images/glass-hero.png'
+import revolutionizing from '../../assets/images/Revolutionizing.svg'
 import Footer from '../../components/footer/Footer'
 
 
@@ -35,35 +34,29 @@ const Landing = () => {
           </div>
         </div>
       </nav>
-      <img className='hero-left' src={landingHero} alt="" />
-      <img className='hero-right' src={landingHero} alt="" />
-      <img className='hero-mid' src={landingHero} alt="" />
+      {/* <img className='hero-left' src={landingHero} alt="" />
+      <img className='hero-right' src={landingHero} alt="" /> */}
+      <img className='hero-mid' src={land_grad} alt="gradient" />
 
       <section className="hero">
-        <img src={coding} alt="coding" className='coding-img'/>
-        <img src={next_gen} alt="nextgen" className='nextgen-img'/>
         <div className="hero-content">
+        
+          <img src={glass_board} alt="glass-board" className='glass-board'/>
+          <img src={revolutionizing} alt="revolutionizin" className='revolutionizing'/>
           <div className="title">
-            <h1>
-              THE
-            </h1>
-            <h1>
-              <span>FUTURE </span>
-            </h1>
+            <h1>Coding Experience</h1> 
           </div>
+          <br />
           <div className="sub-title">
             <p>
               The ultimate coding platform that lets you unleash the full potential of your coding skills with the power of our cutting edge Artificial Intelligence
             </p>
           </div>
+          <div className="hero-btn">Start Coding</div>
         </div>
-        <div className="codingimg"></div>
       </section>
 
-      {/* <section className="hero-graphics">
-        <div className="nextimg"></div>
-        <div className="codingimg"></div>
-      </section> */}
+
 
       <section className="intro">
         <div className="intro-content">
