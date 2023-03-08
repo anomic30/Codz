@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import "./Codes.scss"
 import { Select, Skeleton, Container, SimpleGrid, Flex } from '@mantine/core';
 import CodeCard from '../../components/codeCard/codeCard'
@@ -9,8 +9,27 @@ import kebab_icon from '../../assets/icons/kebab.svg'
 import { useSelector } from 'react-redux';
 
 const Codes = () => {
-  
+
   const userData = useSelector(state => state.user.value);
+  const [sortOption, setSortOption] = useState('Newest First');
+  const [sortedCodes, setSortedCodes] = useState([]);
+
+  useEffect(() => {
+    if (userData?.codes) {
+      const sorted = userData.codes.slice().sort((a, b) => {
+        if (sortOption === 'Newest First') {
+          return new Date(b.created_at) - new Date(a.created_at);
+        } else {
+          return new Date(a.created_at) - new Date(b.created_at);
+        }
+      });
+      setSortedCodes(sorted);
+    }
+  }, [userData, sortOption]);
+
+  const handleSortOptionChange = (value) => {
+    setSortOption(value);
+  }
 
   return (
     <div className='Codes'>
@@ -44,16 +63,12 @@ const Codes = () => {
                 },
               },
             })}
+            onChange={handleSortOptionChange}
+            value={sortOption}
           />
         </div>
         <br />
         <br />
-        {/* <SimpleGrid cols={4}>
-          <CodeCard />
-          <CodeCard />
-          <CodeCard />
-          <CodeCard />
-        </SimpleGrid> */}
         <Flex
           gap={30}
           justify="flex-start"
@@ -61,9 +76,9 @@ const Codes = () => {
           direction="row"
           wrap="wrap"
         >
-          {userData?.codes?.length > 0? userData.codes.map((code) => {
-            return <CodeCard code={code} />
-          }): <p>You haven't saved any file yet!</p>}
+          {sortedCodes?.length > 0 ? (
+            sortedCodes.map(code => <CodeCard code={code} />)
+          ) : <p>You haven't saved any file yet!</p>}
         </Flex>
       </Container>
     </div>

@@ -92,6 +92,7 @@ const Chat = () => {
                     <img src={broom_logo} alt="Clear chat" />
                 </div>
                 <Textarea
+                    maxRows={4}
                     placeholder="Ask your query"
                     autosize
                     minRows={1}
