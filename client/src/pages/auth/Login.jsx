@@ -31,10 +31,10 @@ const Login = () => {
   const userMetadata = useSelector((state) => state.auth.value);
 
   useEffect(() => {
-    if (userMetadata.issuer) {
+    if (userMetadata?.issuer) {
       navigate("/app");
     }
-  }, [userMetadata.issuer])
+  }, [userMetadata?.issuer])
 
   const handleLogin = async () => {
     setLoading(true);
