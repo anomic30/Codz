@@ -3,7 +3,7 @@
 <!-- PROJECT Intro -->
 <br />
 <div align="center">
-  <a href="https://storz-test.pages.dev/" target="_blank">
+  <a href="https://codz.pages.dev/" target="_blank">
     <img src="https://user-images.githubusercontent.com/72182438/224468010-0b888c75-e174-415a-99b9-999c73b5c530.png" alt="Project Banner" height="100">
   </a>
     <h1>Codz</h1>
@@ -13,42 +13,43 @@
 
 ## About The Project
 
-<a href="https://storz-test.pages.dev/" target="_blank">
+<a href="https://codz.pages.dev/" target="_blank">
     <img src="https://user-images.githubusercontent.com/72182438/224509029-424a4361-95b2-434c-933a-3dc365543ade.png" alt="Project Banner">
 </a>
 <br>
 
 <!-- PROJECT SHIELDS -->
-![Solana](https://user-images.githubusercontent.com/63467479/184534037-ceed5443-f4fb-4afd-8c12-4c628a3c45b4.png)
+![Solana](https://user-images.githubusercontent.com/72182438/224568489-05721276-a299-4330-af2b-c2d9a648a200.svg)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
 
-**Codz** is an AI powered , usable-design-focused, coding platform that is built to replace current storage providers in the market. 
+**Codz** is the ultimate coding platform that lets you unleash the full potential of your coding skills with the power of our cutting edge Artificial Intelligence technology.
  
 
 **Features of our application**:
 
 
 
-- Code generation
-- Code Debugging
-- Code optimization
-- Code Summarization
+- AI Code Generation
+- AI Code Optimization
+- AI Code Summarization
+- Intelligent AI Debugging
+- AI Chatbot query resolver
+- Unlimited File saves
+- Supports over 30+ programming languages
+- Buy credits using Solana Pay
 - Passwordless Authentication
-
-- Complete ownership of the data
-- User friendly interface
-- Fast, Reliable and Secure 
-- Built on Modern and Well-used Technologies like React, Solana, MongoDB & NodeJS
+- User friendly interface 
+- Built on modern and well-used technologies like React, Solana, MongoDB & NodeJS
 
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## 📸 Screenshots
+## Screenshots
 
 Here is a sneak peek of the application and it's visuals 😍:
 
@@ -95,11 +96,11 @@ Here is a sneak peek of the application and it's visuals 😍:
 
 <!-- GETTING STARTED -->
 
-# ✅ Quick Start Guide
+# Quick Start Guide
 
 To get started with having your own instance of Storz, follow the steps described in the following section
 
-## 💯 Prerequisites
+## Prerequisites
 
 You will need these to be already installed:
 
@@ -107,33 +108,34 @@ You will need these to be already installed:
 
 And that's it
 
-## 💾 Installation
+## Installation
 
 Follow these steps to get started
 
-### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/Sneakad/Storz.git
+git clone https://github.com/anomic30/Codz.git
 # Enter into the frontend directory
-cd Storz/client
+cd Codz/client
 # Install the dependencies
 npm install
 # Enter into the server directory
-cd Storz/server
+cd Codz/server
 # Install the dependencies
 npm install
 ```
 ### ⚠️ Important!
 In order to use this for your own purpose, you need the API keys.
-For the passwordless authentication, grab the API keys from [Magic](https://magic.link/). For the IPFS, grab the required API keys from [Infura](https://infura.io/product/ipfs) and for the MongoDB, create a [MongoDB](https://www.mongodb.com/atlas/database) Atlas server and setup the env variables accordingly.
+For the passwordless authentication, grab the API keys from [Magic](https://magic.link/). For the Judge0 API, grab the required API keys from [Rapid API](https://rapidapi.com/judge0-official/api/judge0-ce) and for the MongoDB, create a [MongoDB](https://www.mongodb.com/atlas/database) Atlas server and setup the env variables accordingly.Get the OpenAI API keys from [OpenAI Dashboard](https://platform.openai.com/account/api-keys)
 
 ### Starting the application
 
 ```bash
-# To run the frontend OR backend
-npm start
+# To run the frontend
+npm run dev
+# To run the backend
+nodemon index.js
 # To build the frontend
 npm run build
 ```
@@ -141,20 +143,20 @@ npm run build
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-# 📐 How it works
+# How it works
 
 Here's a diagram explaining exactly how everything fits into place
 
 <div align="center">
-<img src="https://user-images.githubusercontent.com/63467479/184536345-bc2db979-1a97-4770-825b-a99ccb08384d.png" />
+<img src="https://user-images.githubusercontent.com/72182438/224567877-364a402c-4501-480e-b107-fe32b37d3179.png" />
 
 </div>
 
 <!-- LICENSE -->
 
-# 📄 License
+<!-- # 📄 License
 
-Distributed under the MIT License. See [`LICENSE.md`](LICENSE.md) for more information.
+Distributed under the MIT License. See [`LICENSE.md`](LICENSE.md) for more information. -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -164,9 +166,17 @@ Distributed under the MIT License. See [`LICENSE.md`](LICENSE.md) for more infor
 <img src="https://user-images.githubusercontent.com/72182438/224510525-1e790657-376e-4d69-bf79-79e80232439f.png" width="95%"/>
 </div>
 
+# Socials
+
+<div >
+<a href="https://twitter.com/Codz_AI" target="_blank">
+<img src="https://user-images.githubusercontent.com/72182438/224572828-a6b2a208-4922-46d4-a149-f5f431b30b25.svg" width="8%"/>
+</a>
+</div>
+
 
 # Endnote
 
 Just one last thing, if you have reached this far, why not consider giving a star to the repo. This keeps us going, and we love to see that people like our projects, and motivates us to make more of these. With that, thank you loads 😊🥰
 
-<p align="right">~ Storz team</p>
+<p align="right">~ Codz team</p>
