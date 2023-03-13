@@ -20,6 +20,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
 // Define routes below
+app.use("/", (req, res) => {
+    res.send("Hello from Codz Server!");
+});
 app.use("/api", routes);
 
 connectToDatabase().then(() => {
