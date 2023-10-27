@@ -97,7 +97,9 @@ const EditorControls = () => {
       .then(function (response) {
         console.log("res.data", response.data);
         const token = response.data.token;
-        checkStatus(token);
+        setTimeout(() => {
+            checkStatus(token);
+        }, 2000);
       })
       .catch((err) => {
         setProcessing(false);
